@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "HichokoochBot",
+  "builds": [
+    {
+      "src": "*.js",
+      "use": "@now/node"
+    }
+  ]
+}

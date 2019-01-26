@@ -1,0 +1,17 @@
+{
+  "name": "hichokooch",
+  "version": "1.0.0",
+  "description": "Hichokooch Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Mozhi Amiri",
+  "license": "ISC",
+  "dependencies": {
+    "telegraf": "^3.26.0"
+  },
+  "engines": {
+    "node": "10.13.0"
+  }
+}
