@@ -8,6 +8,10 @@ app.listen(port, '0.0.0.0', function() {
   console.log('Listening on Port 3000');
 });
 
+app.get('/', (req, res) => {
+  res.json('Hichokooch Bot is running!');
+});
+
 const bot = new Telegraf('780594902:AAGjWI_AvhRsY5aVQGdaz1CPqUErM7cttME');
 
 bot.start(ctx => ctx.reply(link.start));
