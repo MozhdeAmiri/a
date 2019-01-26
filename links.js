@@ -259,6 +259,9 @@ module.exports = {
     ریباک - Reebok
     https://m.trendyol.com/reebok?st=reeb&qt=reebok&qs=search
 
+    برشکا - Bershka
+    https://www.bershka.com/tr/erkek/sale/i%CC%87ndirimin-favorileri-c1010194051.html
+
     ماوی
     https://m.trendyol.com/mavi?st=mavi&qt=mavi&qs=search
 
