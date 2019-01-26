@@ -1,6 +1,13 @@
 const Telegraf = require('telegraf');
 const link = require('./links');
 
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+app.listen(port, '0.0.0.0', function() {
+  console.log('Listening on Port 3000');
+});
+
 const bot = new Telegraf('780594902:AAGjWI_AvhRsY5aVQGdaz1CPqUErM7cttME');
 
 bot.start(ctx => ctx.reply(link.start));
@@ -32,10 +39,3 @@ bot.hears('رو تختی', ctx => ctx.reply(link.sheet));
 console.log('Hichokooch Bot is now available.');
 
 bot.launch();
-
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 3000;
-app.listen(port, '0.0.0.0', function() {
-  console.log('Listening on Port 3000');
-});
