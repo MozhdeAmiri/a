@@ -9,6 +9,7 @@
   "author": "Mozhi Amiri",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.4",
     "telegraf": "^3.26.0"
   },
   "engines": {
