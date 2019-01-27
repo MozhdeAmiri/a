@@ -1,16 +1,33 @@
 const Telegraf = require('telegraf');
 const link = require('./links');
+const request = require('axios');
 
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
+
 app.listen(port, '0.0.0.0', function() {
   console.log('Listening on Port 3000');
 });
 
 app.get('/', (req, res) => {
   res.json('Hichokooch Bot is running!');
+  invokeIteself();
 });
+
+const interval = 60 * 15;
+const invokeIteself = () => {
+  console.log(`Hichokooch Bot Interval Success...`);
+  setInterval(() => {
+     request({
+       url: `https://hichokooch.herokuapp.com/`,
+       method: 'GET',
+     })
+       .then(res => { console.log(`Hichokooch Bot Interval Success...`);})
+       .catch(err => { console.log(`Hichokooch Bot Interval Error...`);});
+
+  }, interval * 1000);
+};
 
 const bot = new Telegraf('780594902:AAGjWI_AvhRsY5aVQGdaz1CPqUErM7cttME');
 
