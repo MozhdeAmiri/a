@@ -13,7 +13,6 @@ app.listen(port, '0.0.0.0', function() {
 
 app.get('/', (req, res) => {
   res.json('Hichokooch Bot is running!');
-  invokeIteself();
 });
 
 bot.start(ctx => ctx.reply(link.start));
@@ -45,20 +44,3 @@ bot.hears('رو تختی', ctx => ctx.reply(link.sheet));
 console.log('Hichokooch Bot is now available.');
 
 bot.launch();
-
-const interval = 60 * 15;
-const invokeIteself = () => {
-  console.log(`Hichokooch Bot Interval Success...`);
-  setInterval(() => {
-    request({
-      url: `https://hichokooch.herokuapp.com/`,
-      method: 'GET',
-    })
-      .then(res => {
-        console.log(`Hichokooch Bot Interval Success...`);
-      })
-      .catch(err => {
-        console.log(`Hichokooch Bot Interval Error...`);
-      });
-  }, interval * 1000);
-};
