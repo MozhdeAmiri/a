@@ -1,6 +1,7 @@
 const Telegraf = require('telegraf');
 const link = require('./links');
 const request = require('axios');
+const bot = new Telegraf('780594902:AAGjWI_AvhRsY5aVQGdaz1CPqUErM7cttME');
 
 const express = require('express');
 const app = express();
@@ -14,22 +15,6 @@ app.get('/', (req, res) => {
   res.json('Hichokooch Bot is running!');
   invokeIteself();
 });
-
-const interval = 60 * 15;
-const invokeIteself = () => {
-  console.log(`Hichokooch Bot Interval Success...`);
-  setInterval(() => {
-     request({
-       url: `https://hichokooch.herokuapp.com/`,
-       method: 'GET',
-     })
-       .then(res => { console.log(`Hichokooch Bot Interval Success...`);})
-       .catch(err => { console.log(`Hichokooch Bot Interval Error...`);});
-
-  }, interval * 1000);
-};
-
-const bot = new Telegraf('780594902:AAGjWI_AvhRsY5aVQGdaz1CPqUErM7cttME');
 
 bot.start(ctx => ctx.reply(link.start));
 
@@ -60,3 +45,20 @@ bot.hears('رو تختی', ctx => ctx.reply(link.sheet));
 console.log('Hichokooch Bot is now available.');
 
 bot.launch();
+
+const interval = 60 * 15;
+const invokeIteself = () => {
+  console.log(`Hichokooch Bot Interval Success...`);
+  setInterval(() => {
+    request({
+      url: `https://hichokooch.herokuapp.com/`,
+      method: 'GET',
+    })
+      .then(res => {
+        console.log(`Hichokooch Bot Interval Success...`);
+      })
+      .catch(err => {
+        console.log(`Hichokooch Bot Interval Error...`);
+      });
+  }, interval * 1000);
+};
